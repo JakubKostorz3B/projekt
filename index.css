@@ -1,0 +1,104 @@
+body{
+    background-color: rgb(102, 194, 247);
+}
+header{
+    background-color: rgb(30, 169, 224);
+    width: 100%;
+    height: 250px;
+    padding: 0;
+    margin: 0;
+}
+nav{
+    width: 100%;
+    height: 50px;
+    background-color: azure;
+    text-align: center;
+}
+      /* wygląd głównego elementu - ol */
+      ol {
+        list-style-type:none;
+        padding:0;
+        margin:0;
+        background-color:#FFF;
+        font-size:18px;
+        height:2em;
+        line-height:2em;
+        text-align:center;
+      }
+
+      /* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
+      ol a {
+        display:block;
+        text-decoration:none;
+        color:#000;
+        padding:0 5px;
+      }
+
+      /* wygląd elementów - li - wszystkich dzieci elementu - ol */
+      ol > li {
+        float:left;
+        width:150px;
+        margin-left:1px;
+        background-color:#FDD700;
+        height:2em;
+      }
+
+
+      ol > li:first-child {
+        margin-left:0;
+      }
+
+
+      ol > li:hover {
+        background-color:#EEE;
+      }
+
+
+      ol > li:hover > a {
+        color:#09C;
+      }
+
+
+      ol > li:hover > ul {
+        display:block;
+      }
+
+
+      ol > li > ul {
+        display:none;
+        list-style-type:none;
+        padding:0;
+        margin:0;
+      }
+
+      ol > li > ul > li {
+        position:relative;
+        background-color:#EEE;
+      }
+
+      ol > li > ul > li > a {
+        border-top:1px solid #FFF;
+      }
+
+
+      ol > li > ul > li:hover {
+        background-color:#DDD;
+      }
+
+
+      ol > li > ul > li:hover > a {
+        color:#09C;
+      }
+
+article{
+width: 60%;
+height: 1200px;
+background-color: cornflowerblue;
+float: left;
+}
+aside{
+float: right;
+width: 40%;
+height: 1200px;
+background-color: cyan;
+}

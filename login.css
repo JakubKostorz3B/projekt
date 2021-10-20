@@ -1,0 +1,72 @@
+body {
+  background-color: #8cdff9;
+}
+#pole{
+  position: relative;
+  width: 60%;
+  height: 600px;
+  left: 20%;
+  top: 50px;
+  padding: 0;
+  background-color: #e8faff;
+}
+a {
+
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+form {
+  left: 10%;
+  position: relative;
+  top: 30%;
+  font-weight: bold;
+  text-align: left;
+}
+p {
+  font-family: Arial;
+  font-weight: 300%;
+}
+#login {
+  left: 10%;
+  width: 30%;
+  height: 25px;
+}
+#haslo {
+  left: 10%;
+  width: 30%;
+  height: 25px;
+}
+#a1 {
+
+  left: 90%;
+}
+#reklama{
+  position: relative;
+  background-color: aqua;
+  width: 400px;
+  height: 400px;
+  float: right;
+left: -15%;
+top: 15%;
+}
+button{
+  position: relative;
+  top: 10px;
+  left: 130px;
+  width: 100px;
+  height:40px ;
+}
+img{
+  width: 400px;
+  height: 400px;
+}
+#a2{
+  text-align: center;
+  position: relative;
+  left: -3%;
+  top: 40px;
+  width: 35%;
+  border-top: solid;
+  border-color: black;
+}
