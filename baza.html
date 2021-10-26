@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const tab3=[];
+const tab1=["qwerty"];
+const tab2=["mikolaj"];
+const zmiana1= localStorage.getItem("jakubhaslonowy");
+const zmiana2= localStorage.getItem("mikolajhaslonowy");
+const zmiana3= localStorage.getItem("nowyhaslonowy")
+
+if(zmiana1==null &&zmiana2==null &&zmiana3==null ){
+    const nowy1= localStorage.getItem("nowyimie");
+const nowy2= localStorage.getItem("nowynazwisko");
+const nowy3= localStorage.getItem("nowylogin");
+const nowy4= localStorage.getItem("nowyemail");
+const nowy5= localStorage.getItem("nowyhaslo");
+const tab3=[nowy5];
+const jakub={
+name: "jakub",
+login:"jolokomorka",
+nazwisko: "kostorz",
+email: "jakub.k.kostorz@gmail.com",
+haslo:  tab1[0],
+ }
+ const mikolaj={
+name: "mikolaj",
+login:"mikolaj",
+nazwisko: "mikolaj",
+email: "nowak@gmail.com",
+haslo:  tab2[0],   
+ }
+ const nowy={
+name:nowy1,
+login:nowy3,
+nazwisko: nowy2,
+email: nowy4,
+haslo:  tab3[0],   
+ }
+
+
+localStorage.setItem("jakubemail", jakub.email);
+localStorage.setItem("mikolajemail", mikolaj.email);
+localStorage.setItem("jakublogin", jakub.login);
+localStorage.setItem("mikolajlogin", mikolaj.login);
+localStorage.setItem("jakubhaslo", jakub.haslo);
+localStorage.setItem("mikolajhaslo", mikolaj.haslo);
+function myFunc() {
+location.href="login.html"
+}
+setTimeout(myFunc, 100);
+}
+else if(zmiana1!=null){
+tab1[0]=zmiana1;
+const jakub={
+name: "jakub",
+login:"jolokomorka",
+nazwisko: "kostorz",
+email: "jakub.k.kostorz@gmail.com",
+haslo:  tab1[0],
+ }
+ const mikolaj={
+name: "mikolaj",
+login:"mikolaj",
+nazwisko: "mikolaj",
+email: "nowak@gmail.com",
+haslo:  tab2[0],   
+ }
+
+localStorage.setItem("jakubemail", jakub.email);
+localStorage.setItem("mikolajemail", mikolaj.email);
+localStorage.setItem("jakublogin", jakub.login);
+localStorage.setItem("mikolajlogin", mikolaj.login);
+localStorage.setItem("jakubhaslo", jakub.haslo);
+localStorage.setItem("mikolajhaslo", mikolaj.haslo);
+function myFunc() {
+location.href="login.html"
+}
+setTimeout(myFunc, 100);
+}
+else if(zmiana2!=null){
+tab1[0]=zmiana1;
+const jakub={
+name: "jakub",
+login:"jolokomorka",
+nazwisko: "kostorz",
+email: "jakub.k.kostorz@gmail.com",
+haslo:  tab1[0],
+ }
+ const mikolaj={
+name: "mikolaj",
+login:"mikolaj",
+nazwisko: "mikolaj",
+email: "nowak@gmail.com",
+haslo:  tab2[0],   
+ }
+
+localStorage.setItem("jakubemail", jakub.email);
+localStorage.setItem("mikolajemail", mikolaj.email);
+localStorage.setItem("jakublogin", jakub.login);
+localStorage.setItem("mikolajlogin", mikolaj.login);
+localStorage.setItem("jakubhaslo", jakub.haslo);
+localStorage.setItem("mikolajhaslo", mikolaj.haslo);
+function myFunc() {
+location.href="login.html"
+}
+}
+setTimeout(myFunc, 100);
+    </script>
+</body>
+</html>

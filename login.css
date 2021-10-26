@@ -1,7 +1,7 @@
 body {
   background-color: #8cdff9;
 }
-#pole{
+#pole {
   position: relative;
   width: 60%;
   height: 600px;
@@ -11,7 +11,6 @@ body {
   background-color: #e8faff;
 }
 a {
-
   text-align: center;
   text-decoration: none;
   color: black;
@@ -38,30 +37,29 @@ p {
   height: 25px;
 }
 #a1 {
-
   left: 90%;
 }
-#reklama{
+#reklama {
   position: relative;
   background-color: aqua;
   width: 400px;
   height: 400px;
   float: right;
-left: -15%;
-top: 15%;
+  left: -15%;
+  top: 15%;
 }
-button{
+button {
   position: relative;
   top: 10px;
   left: 130px;
   width: 100px;
-  height:40px ;
+  height: 40px;
 }
-img{
+img {
   width: 400px;
   height: 400px;
 }
-#a2{
+#a2 {
   text-align: center;
   position: relative;
   left: -3%;

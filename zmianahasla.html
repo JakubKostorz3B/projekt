@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="zmianahasla.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="pole">
+      <form name="form" action="" method="post">
+        <p>Email do swojego konta<br /></p>
+        <input type="email" name="email" id="email" />
+        <input type="button" name="pierwszy" id="pierwszy"><br />
+        <p id="drugi">Podaj kod weryfikacyjny<br /></p>
+        <input type="text" name="weryfikacja" id="weryfikacja" /><br />
+        <input type="button" id="przycisk" value="wyślij"></input><br />
+        <p id="hide">Podaj nowe hasło:<br /></p>
+        <input type="password" minlength="6" id="haslo"/><br />
+        <p id="hide2">Powtórz hasło:<br /></p>
+        <input type="password" minlength="6" id="haslo2" /><br />
+        <input type="button" id="przycisk2" value="wyślij"></input>
+      </form>
+    </div>
+
+    <script>
+
+let liczba = new Uint16Array(1);
+window.crypto.getRandomValues(liczba);
+for (var i = 0; i < liczba.length; i++) {
+  console.log(liczba[i]);
+};
+
+      const przycisk = document.getElementById("przycisk");
+      const hide = document.getElementById("hide");
+      const hide2 = document.getElementById("hide2");
+      const label = document.getElementById("haslo");
+      const label2 = document.getElementById("haslo2");
+    const przycisk2 = document.getElementById("przycisk2");
+    const pierwszy=document.getElementById("pierwszy");
+    const drugi=document.getElementById("drugi");
+    const weryfikacja=document.getElementById("weryfikacja");
+const liczbaa= liczba;
+
+
+    pierwszy.onclick=function(){
+   const email1 = document.getElementById("email").value;
+   const email=localStorage.getItem("jakubemail");
+      const email2=localStorage.getItem("mikolajemail");
+      const email3=localStorage.getItem("nowyemail");
+   if(email1==email||email1==email2 ||email1==email3 ){
+      przycisk.style.visibility = "visible";
+      drugi.style.visibility = "visible";
+      weryfikacja.style.visibility = "visible";
+alert("twoja liczba to: "+ liczba );
+   }
+   else if(email1==0){
+     alert("nic nie wpisałeś");
+   }
+   else {
+     alert("Błędny email");
+   }
+    };
+
+        przycisk.onclick = function() {
+          const kod= document.getElementById("weryfikacja").value;
+          if(kod==liczbaa){
+          hide.style.visibility = "visible";
+          hide2.style.visibility = "visible";
+          label.style.visibility = "visible";
+          label2.style.visibility = "visible";
+          przycisk2.style.visibility = "visible";
+          }
+          else{
+            alert("zły kod");
+          };
+      
+        };
+        przycisk2.onclick = function(){
+      const haslo = document.getElementById("haslo").value;
+      const haslo2 = document.getElementById("haslo2").value;
+
+        console.log(haslo);
+        console.log(haslo2);
+
+
+        if(haslo==0){
+          alert("nic nie wpisałeś");
+        }
+        else if(haslo==haslo2){
+          const email1 = document.getElementById("email").value;
+   const email=localStorage.getItem("jakubemail");
+      const email2=localStorage.getItem("mikolajemail");
+      const email3=localStorage.getItem("nowyemail");
+         if(email1==email){
+          localStorage.removeItem("jakubhaslo");
+          localStorage.setItem("jakubhaslonowy",haslo  );
+          alert("Twoje hasło zostało zmienione. Za chwilę zostaniesz przekierowany do strony logowania");
+      function myFunc() {
+            location.href="baza.html"
+}
+setTimeout(myFunc, 1200);
+         }
+         else if(email1==email2){
+          localStorage.removeItem("mikolajhaslo");
+          localStorage.setItem("mikolajhaslonowy",haslo  );
+          alert("Twoje hasło zostało zmienione. Za chwilę zostaniesz przekierowany do strony logowania");
+      function myFunc() {
+            location.href="baza.html"
+}
+setTimeout(myFunc, 1200);
+         }
+         else if(email1==email3){
+          localStorage.removeItem("nowyhaslo");
+          localStorage.setItem("nowyhaslonowy",haslo  );
+          alert("Twoje hasło zostało zmienione. Za chwilę zostaniesz przekierowany do strony logowania");
+      function myFunc() {
+            location.href="baza.html"
+}
+setTimeout(myFunc, 1200);
+         };
+
+
+
+        } 
+        else{
+      alert("Róźne hasła");  
+
+        }  
+        };
+     
+      
+    </script>
+
+  </body>
+</html>

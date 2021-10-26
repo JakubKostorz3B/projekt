@@ -1,0 +1,57 @@
+body {
+	background-color: #8cdff9;
+}
+#pole {
+	position: relative;
+	width: 60%;
+	height: 800px;
+	left: 20%;
+	top: 50px;
+	padding: 0;
+	background-color: #e8faff;
+}
+p {
+	font-family: Arial;
+	font-weight: 400%;
+}
+form {
+	font-family: Arial;
+	font-weight: 400%;
+
+	position: relative;
+	top: 20%;
+	left: 5%;
+	text-align: center;
+}
+#hide {
+	visibility: hidden;
+}
+#hide2 {
+	visibility: hidden;
+}
+#przycisk2 {
+	visibility: hidden;
+}
+#haslo {
+	visibility: hidden;
+}
+#haslo2 {
+	visibility: hidden;
+}
+
+#drugi {
+	visibility: hidden;
+}
+#weryfikacja {
+	visibility: hidden;
+}
+#przycisk {
+	visibility: hidden;
+}
+
+ #haslo:invalid:focus {
+	background-color:rgb(236, 114, 114) ;
+  }
+  #haslo2:invalid:focus {
+	background-color:rgb(236, 114, 114) ;
+  }

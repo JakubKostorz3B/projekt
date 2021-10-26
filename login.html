@@ -14,15 +14,46 @@
       <p>Login</p>
       <input type="text" id="login" name="" /><br />
       <p>Hasło</p>
-      <input type="text" id="haslo" name="" /><br />
-      <a href="#">Zapomniałes hasła?</a><br>
+      <input type="password" id="haslo" name="" /><br />
+      <a href="zmianahasla.html">Zapomniałes hasła?</a><br>
     <br>
-      <button id="zaloguj">Zaloguj</button>
+      <input type="button" id="zaloguj"></input>
       <br>
       <div id="a2">
         <br>
         <a id="a1" href="rejestracja.html">Nie posiadasz konta? Dołącz teraz</a>
       </div>
     </form>
+    <script>
+
+const user1=localStorage.getItem("jakublogin");
+   const user2=localStorage.getItem("mikolajlogin");
+   const user3=localStorage.getItem("nowylogin");
+   const password=localStorage.getItem("jakubhaslo");
+   const password2=localStorage.getItem("mikolajhaslo");
+   const password3=localStorage.getItem("nowyhaslo");
+const guzik=document.getElementById("zaloguj");
+
+guzik.onclick=function(){
+  const login= document.getElementById("login").value;
+const haslo= document.getElementById("haslo").value;
+
+
+   if(login==user1&& haslo==password||login==user2&& haslo==password2||login==user3&& haslo==password3){
+alert("witaj " +login );
+alert("przekierowanie na strone główną" );
+setTimeout(location.href=" #",25);
+
+   } else if(haslo==0){
+     alert("nie cie wpisałeś");
+   }
+else if(login==0){
+     alert("nie cie wpisałeś");
+   }
+   else{
+     alert("błedny login lub hasło")
+   }
+  };
+    </script>
   </body>
 </html>
