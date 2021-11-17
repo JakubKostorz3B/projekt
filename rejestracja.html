@@ -1,75 +1,125 @@
 <!DOCTYPE html>
 <html lang="pl">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" href="rejestracja.css" />
-		<title>Rejestracja</title>
-	</head>
-	<body>
-		<div id="obraz"></div>
-		<div>
-			<div id="reklama"></div>
-			<form action="">
-				<p>Podaj imie</p>
-				<br />
-				<input type="text" id="imie" />
-				<p>Nazwisko</p>
-				<br />
-				<input type="text" id="nazwisko" />
-				<p>login</p>
-				<br />
-				<input type="text" id="login" />
-				<br />
-				<p>Email</p><br>
-				<input type="email" id="email" />
-				<p>hasło</p>
-				<br />
-				<input type="password" id="haslo" />
-				<p>Powtórz hasło</p>
-				<br />
-				<input type="password" id="haslo2" /><br />
-				<br />
-				<input type="button" id="wyslij" value="Zatwierdź"></input>
-			</form>
-			<script>
-				const przycisk = document.getElementById("wyslij");
-				 przycisk.onclick=function(){
-                const email=document.getElementById("email").value;
-				const imie=document.getElementById("imie").value;
-				const nazwisko=document.getElementById("nazwisko").value;
-				const login=document.getElementById("login").value;
-				const haslo=document.getElementById("haslo").value;
-				const haslo2=document.getElementById("haslo2").value;
-				const przycisk = document.getElementById("wyslij");
 
-    
-				if(imie==0||nazwisko==0||login==0||haslo==0||haslo2==0||email==0){
-					alert("nic nie wpisałeś");
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="rejestracja.css" />
+	<title>Rejestracja</title>
+</head>
+
+<body>
+	<div id="obraz"></div>
+	<div>
+		<div id="reklama"></div>
+		<form action="">
+			<p>Podaj imie</p>
+			<br />
+			<input type="text" id="imie" />
+			<p>Nazwisko</p>
+			<br />
+			<input type="text" id="nazwisko" />
+			<p>login</p>
+			<br />
+			<input type="text" id="login" />
+			<br />
+			<p>Email</p><br>
+			<input type="email" id="email" />
+			<p>hasło</p>
+			<br />
+			<input type="password" id="haslo" minlength="8" />
+			<p>Powtórz hasło</p>
+			<br />
+			<input type="password" id="haslo2" minlength="8" /><br />
+			<br />
+			<input type="button" id="wyslij" value="Zatwierdź"></input>
+		</form>
+		<script>
+			const przycisk = document.getElementById("wyslij");
+			przycisk.onclick = function () {
+				const email = document.getElementById("email").value;
+				const imie = document.getElementById("imie").value;
+				const nazwisko = document.getElementById("nazwisko").value;
+				const login = document.getElementById("login").value;
+				const haslo = document.getElementById("haslo").value;
+				const haslo2 = document.getElementById("haslo2").value;
+				const przycisk = document.getElementById("wyslij");
+				const sprawdz = localStorage.getItem("jakubemail");
+				const sprawdz2 = localStorage.getItem("mikolajemail");
+				const sprawdz3 = localStorage.getItem("nowyemail");
+				const czyemail = email.indexOf("@");
+				const czyemail2 = email.indexOf(".");
+				const dlugosc = haslo.length;
+				const dlugosc2 = haslo.length;
+				if (imie == 0) {
+
+					alert(" nie wpisałeś imienia");
 				}
-				else if(haslo!=haslo2){
+				else if (czyemail == -1 || czyemail2 == -1) {
+					alert("email jest niepoprawny");
+				}
+				else if (czyemail2 < czyemail) {
+					alert("email jest niepoprawny");
+				}
+				else if (email.startsWith("@") == true) {
+					alert("email jest niepoprawny");
+				}
+				else if (email.startsWith(".") == true) {
+					alert("email jest niepoprawny");
+				}
+				else if (email.endsWith(".") == true) {
+					alert("email jest niepoprawny");
+				}
+				else if (email == sprawdz || email == sprawdz2 || email == sprawdz3) {
+					alert("email jest już użyty");
+				}
+				else if (nazwisko == 0) {
+
+					alert(" nie wpisałeś nazwiska");
+				}
+				else if (login == 0) {
+
+					alert(" nie wpisałeś loginu");
+				}
+				else if (haslo == 0) {
+
+					alert(" nie wpisałeś hasła");
+				}
+
+				else if (haslo2 == 0) {
+
+					alert(" nie wpisałeś poprawnie powtórzonego hasła");
+				}
+				else if (dlugosc <= 7) {
+					alert(" za krótkie hasło");
+				}
+				else if (dlugosc2 <= 7) {
+					alert(" za krótkie hasło");
+				}
+				else if (haslo != haslo2) {
 					alert("Różne hasła");
 				}
-				else if(haslo==haslo2){
+				else if (haslo == haslo2 || email == sprawdz || email == sprawdz2 || email == sprawdz3 || czyemail == -1 || czyemail2 == -1) {
 					localStorage.setItem("nowystworzony", "coś");
-					localStorage.setItem("nowyimie",imie);
-					localStorage.setItem("nowynazwisko",nazwisko);
-					localStorage.setItem("nowylogin",login);
-					localStorage.setItem("nowyhaslo",haslo);
-					localStorage.setItem("nowyemail",email);	
+					localStorage.setItem("nowyimie", imie);
+					localStorage.setItem("nowynazwisko", nazwisko);
+					localStorage.setItem("nowylogin", login);
+					localStorage.setItem("nowyhaslo", haslo);
+					localStorage.setItem("nowyemail", email);
 					alert("Twoje konto zostało utworzone. Za chwilę będziesz mógł się zalogować");
 					function myFunc() {
-            location.href="baza.html"
-}
-setTimeout(myFunc, 1200);			
+						location.href = "baza.html"
+					}
+					setTimeout(myFunc, 1200);
 				}
 
-				
-	
-}
-			</script>
-		</div>
-		<script></script>
-	</body>
+
+
+			}
+		</script>
+	</div>
+	<script></script>
+</body>
+
 </html>

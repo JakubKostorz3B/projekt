@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="login.css" />
-    <title>Logowanie</title>
-  </head>
-  <body>
-    <div id="pole">
-<div id="reklama"><img src="gif.gif" alt="gif" sizes="400px"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="login.css" />
+  <title>Logowanie</title>
+</head>
+
+<body>
+  <div id="pole">
+    <div id="reklama"><img src="gif.gif" alt="reklama" sizes="400px"></div>
     <form action="">
       <p>Login</p>
       <input type="text" id="login" name="" /><br />
       <p>Hasło</p>
       <input type="password" id="haslo" name="" /><br />
       <a href="zmianahasla.html">Zapomniałes hasła?</a><br>
-    <br>
+      <br>
       <input type="button" id="zaloguj"></input>
       <br>
       <div id="a2">
@@ -26,34 +28,61 @@
     </form>
     <script>
 
-const user1=localStorage.getItem("jakublogin");
-   const user2=localStorage.getItem("mikolajlogin");
-   const user3=localStorage.getItem("nowylogin");
-   const password=localStorage.getItem("jakubhaslo");
-   const password2=localStorage.getItem("mikolajhaslo");
-   const password3=localStorage.getItem("nowyhaslo");
-const guzik=document.getElementById("zaloguj");
+      const user1 = localStorage.getItem("jakublogin");
+      const user2 = localStorage.getItem("mikolajlogin");
+      const user3 = localStorage.getItem("nowylogin");
+      const password = localStorage.getItem("jakubhaslo");
+      const password2 = localStorage.getItem("mikolajhaslo");
+      const password3 = localStorage.getItem("nowyhaslo");
+      const guzik = document.getElementById("zaloguj");
+      const userlogin = localStorage.getItem("jakubname");
+      const userlogin2 = localStorage.getItem("mikolajname");
+      const userlogin3 = localStorage.getItem("nowyname");
 
-guzik.onclick=function(){
-  const login= document.getElementById("login").value;
-const haslo= document.getElementById("haslo").value;
+      guzik.onclick = function () {
+        const login = document.getElementById("login").value;
+        const haslo = document.getElementById("haslo").value;
+        const user1 = localStorage.getItem("jakublogin");
+      const user2 = localStorage.getItem("mikolajlogin");
+      const user3 = localStorage.getItem("nowylogin");
+      const password = localStorage.getItem("jakubhaslo");
+      const password2 = localStorage.getItem("mikolajhaslo");
+      const password3 = localStorage.getItem("nowyhaslo");
+      const guzik = document.getElementById("zaloguj");
+      const userlogin = localStorage.getItem("jakubname");
+      const userlogin2 = localStorage.getItem("mikolajname");
+      const userlogin3 = localStorage.getItem("nowyname");
 
+        if (login == user1 && haslo == password) {
+          alert("witaj " + userlogin);
+          localStorage.setItem("zalogowany", user1);
+          alert("przekierowanie na strone główną");
+          setTimeout(location.href = " glowna.html", 25);
+        }
+else if(login == user2 && haslo == password2 ){
+          alert("witaj " + userlogin2);
+          localStorage.setItem("zalogowany", user2);
+          alert("przekierowanie na strone główną");
+          setTimeout(location.href = " glowna.html", 25);
+}
+else if( login == user3 && haslo == password3){
+          alert("witaj " + userlogin3);
+          localStorage.setItem("zalogowany", user3);
+          alert("przekierowanie na strone główną");
+          setTimeout(location.href = " glowna.html", 25);
+}
+        else if (haslo == 0) {
+          alert("nie cie wpisałeś");
+        }
+        else if (login == 0) {
+          alert("nie cie wpisałeś");
+        }
+        else {
+          alert("błedny login lub hasło")
+        };
 
-   if(login==user1&& haslo==password||login==user2&& haslo==password2||login==user3&& haslo==password3){
-alert("witaj " +login );
-alert("przekierowanie na strone główną" );
-setTimeout(location.href=" #",25);
-
-   } else if(haslo==0){
-     alert("nie cie wpisałeś");
-   }
-else if(login==0){
-     alert("nie cie wpisałeś");
-   }
-   else{
-     alert("błedny login lub hasło")
-   }
-  };
+      };
     </script>
-  </body>
+</body>
+
 </html>

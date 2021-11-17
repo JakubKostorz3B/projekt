@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nowezamuwienie.css">
+    <title>Nowa oferta</title>
+</head>
+<body>
+    <div id="obraz"><img id="a" src="logo.png" alt="logo"></div>
+	<div>
+		<div id="reklama"><div id="podglad"></div></div>
+		<form action="">
+			<p>Nazwa przedmiotu</p>
+			<br />
+			<input type="text" id="nazw" />
+			<p>Marka</p>
+			<br />
+			<input type="text" id="marka" />
+			<p>cena</p>
+			<br />
+			<input type="number"  min="0" id="cena" />
+			<br />
+			<p>informacje dodatkowe</p><br>
+			<input type="text" id="infdod" /><br>
+            <br>
+            <br>
+            <br>
+            <input type="button" id="wyslij" value="Podgląd"></input>
+			<input type="button" id="wyslij1" value="Zatwierdź"></input>
+            <script>
+                const zalogowany=localStorage.getItem("zalogowany");
+                if(zalogowany==null){
+        alert("Musisz być zalogowany, zaloguj się");
+          setTimeout(location.href = " cos.html", 25);
+                }
+
+
+				const spr = document.getElementById("wyslij");
+                const wyslij = document.getElementById("wyslij1");
+
+                spr.onclick = function () {
+                    const nazwa = document.getElementById("nazw").value;
+				const model = document.getElementById("marka").value;
+				const cena = document.getElementById("cena").value;
+				const inf = document.getElementById("infdod").value;
+				const spr = document.getElementById("hwyslij");
+                const wyslij = document.getElementById("wyslij1");
+                    if (nazwa == 0) {
+           
+
+
+alert(" nie wpisałeś nazwy");
+}
+else if (model == 0) {
+alert("nie wpisałeś modelu");
+}
+else if (cena<0) {
+alert("podałeś cene ujemną");
+}
+
+else if (inf==0) {
+alert("nie wpisałeś dodatkowych informacji");
+}else{
+    
+}
+                }
+                wyslij.onclick = function () {
+                    const nazwa = document.getElementById("nazw").value;
+				const model = document.getElementById("marka").value;
+				const cena = document.getElementById("cena").value;
+				const inf = document.getElementById("infdod").value;
+				const spr = document.getElementById("hwyslij");
+                const wyslij = document.getElementById("wyslij1");
+
+ if (nazwa == 0) {
+
+alert(" nie wpisałeś nazwy");
+}
+else if (model == 0) {
+alert("nie wpisałeś modelu");
+}
+else if (cena<0) {
+alert("podałeś cene ujemną");
+}
+
+else if (inf==0) {
+alert("nie wpisałeś dodatkowych informacji");
+}else{
+    alert("Twoja oferta została utworzona.");
+					function myFunc() {
+						location.href = "glowna.html"
+					}
+					setTimeout(myFunc, 25);
+				}
+}
+                
+            </script>
+		</form>
+</body>
+</html>

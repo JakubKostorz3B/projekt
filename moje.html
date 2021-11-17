@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Moje konto</title>
+    <link rel="stylesheet" href="moje.css">
+</head>
+
+<body>
+    <div id="obraz"><img src="logo.png" alt="logo"></div>
+<h5>Panej Użytkownika</h5><img src="a.png" alt="logo" id="a"><br>
+<input id="button4" type="button" value="Strona Główna">
+<input id="button" type="button" value="Moje Dane">
+<input id="button2" type="button" value="Moje Oferty">
+<input id="button3" type="button" value="Wyloguj">
+
+    <script>
+                const przycisk4 = document.getElementById("button4");
+        przycisk4.onclick = function () {
+            setTimeout(location.href = " glowna.html", 25);
+        }
+        const przycisk = document.getElementById("button");
+        przycisk.onclick = function () {
+            if(zalogowany==user1){
+const imie= localStorage.getItem("jakubname");
+const nazwisko= localStorage.getItem("jakubnazwisko");
+const email= localStorage.getItem("jakubemail");
+
+document.writeln(imie+"<br>");
+document.writeln(nazwisko+"<br>");
+document.writeln(email);
+        }else if(zalogowany==user2){
+const imie= localStorage.getItem("mikolajname");
+const nazwisko= localStorage.getItem("mikolajnazwisko");
+const email= localStorage.getItem("mikolajemail");
+
+document.writeln(imie+"<br>");
+document.writeln(nazwisko+"<br>");
+document.writeln(email);
+        }else if(zalogowany==user3){
+const imie= localStorage.getItem("nowyimie");
+const nazwisko= localStorage.getItem("nowynazwisko");
+const email= localStorage.getItem("nowyemail");
+
+document.writeln(imie+"<br>");
+document.writeln(nazwisko+"<br>");
+document.writeln(email);
+        }
+       
+        }
+        const przycisk2 = document.getElementById("button2");
+        przycisk2.onclick = function () {
+            setTimeout(location.href = " mojeoferty.html", 25);
+        }
+        const zalogowany = localStorage.getItem("zalogowany");
+        console.log(zalogowany);
+        const user1 = localStorage.getItem("jakublogin");
+      const user2 = localStorage.getItem("mikolajlogin");
+      const user3 = localStorage.getItem("nowylogin");
+
+       
+        const przycisk3 = document.getElementById("button3");
+        przycisk3.onclick = function () {
+            localStorage.clear("zalogowany");
+            setTimeout(location.href = " index.html", 25);
+        }
+    </script>
+</body>
+
+</html>
